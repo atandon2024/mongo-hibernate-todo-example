@@ -1,0 +1,13 @@
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.provider_class">com.mongodb.hibernate.jdbc.MongoConnectionProvider</property>
+        <property name="jakarta.persistence.jdbc.url">mongodb://127.0.0.1:27017/mongo-hibernate-test?directConnection=false</property>
+        <property name="hibernate.connection.username">ajay.tandon</property>
+        <property name="hibernate.connection.password"></property>
+
+        <property name="hibernate.dialect">com.mongodb.hibernate.dialect.MongoDialect</property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property> <!-- or validate / create / none -->
+        <property name="hibernate.show_sql">true</property>
+    </session-factory>
+</hibernate-configuration>
