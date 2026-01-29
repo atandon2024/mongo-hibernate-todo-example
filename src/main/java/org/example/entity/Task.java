@@ -1,45 +1,35 @@
 package org.example.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Struct;
 
-import java.util.Date;
-
-@Entity
-@Table(name = "tasks")
+@Embeddable
+@Struct(name = "Task")
 public class Task {
+//
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+//    private Long id;
 
-    @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    Long id;
-
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    TaskList taskList;
-
-//    @Column(nullable = false)
-    String description;
-
-    @Embedded
-    TaskMetadata metadata;
+    @Column(nullable = true)
+    private String title;
+//
+//    @Embedded
+//    private TaskMetadata metadata;
 
     public Task() {
     }
 
-    public Task(String description) {
-        this.description = description;
+    public Task(String title) {
+        this.setTitle(title);
     }
 
-    public String getDescription() {
-        return description;
+
+    public String getTitle() {
+        return title;
     }
 
-    public TaskMetadata setMetadata(Date date, String author) {
-        metadata = new TaskMetadata();
-        metadata.date = date;
-        metadata.author = author;
-        return metadata;
-    }
-
-    public Long getId() {
-        return id;
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

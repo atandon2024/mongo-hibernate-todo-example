@@ -16,27 +16,15 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.hibernate.orm</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>6.6.1.Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.mongo.hibernate</groupId>
-            <artifactId>mongo-hibernate</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-hibernate</artifactId>
+            <version>1.0.0-alpha1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver-sync</artifactId>
             <version>5.1.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>jakarta.persistence</groupId>
-            <artifactId>jakarta.persistence-api</artifactId>
-            <version>3.1.0</version>
         </dependency>
 
         <dependency>

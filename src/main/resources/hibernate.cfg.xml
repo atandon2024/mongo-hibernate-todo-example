@@ -1,13 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.connection.provider_class">com.mongodb.hibernate.jdbc.MongoConnectionProvider</property>
-        <property name="jakarta.persistence.jdbc.url">mongodb://127.0.0.1:27017/mongo-hibernate-test?directConnection=false</property>
-        <property name="hibernate.connection.username">ajay.tandon</property>
-        <property name="hibernate.connection.password"></property>
 
+        <!-- Core connection props (your Mongo dialect/provider) -->
         <property name="hibernate.dialect">com.mongodb.hibernate.dialect.MongoDialect</property>
+        <property name="hibernate.connection.provider_class">
+            com.mongodb.hibernate.jdbc.MongoConnectionProvider
+        </property>
+        <property name="jakarta.persistence.jdbc.url">
+            mongodb://127.0.0.1:27017/test_metrics?appName=Cluster0
+        </property>
 
-        <property name="hibernate.hbm2ddl.auto">update</property> <!-- or validate / create / none -->
+        <!-- Optional -->
+        <property name="hibernate.hbm2ddl.auto">none</property>
         <property name="hibernate.show_sql">true</property>
+
     </session-factory>
 </hibernate-configuration>
